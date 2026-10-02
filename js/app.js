@@ -1358,7 +1358,7 @@
       fetch(WHATSAPP_WELCOME_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentName, phone, schoolNameAr: SCHOOL_PRINT_NAME, schoolNameEn: SCHOOL_PRINT_NAME_EN }),
+        body: JSON.stringify({ studentName, phone, schoolNameAr: SCHOOL_PRINT_NAME, schoolNameEn: SCHOOL_PRINT_NAME_EN, schoolCode: 'madina' }),
       })
         .then((res) => res.json().catch(() => ({})).then((data) => {
           // لا نزعج المستخدم بأي رسالة — فقط نسجّل النتيجة في console المتصفح لتسهيل تشخيص أي عطل لاحقًا
@@ -1509,7 +1509,7 @@
       const res = await fetch(WHATSAPP_RECEIPT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phone, studentName: student.name, amount: fmtMoney(v.amount), pdfBase64 }),
+        body: JSON.stringify({ phone, studentName: student.name, amount: fmtMoney(v.amount), pdfBase64, schoolCode: 'madina' }),
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok && data && data.success) {

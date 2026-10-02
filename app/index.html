@@ -729,6 +729,7 @@
           <select name="role" required>
             <option value="staff">محاسب — بدون صلاحية إدارة المستخدمين</option>
             <option value="admin">مسؤول — صلاحية كاملة + إدارة المستخدمين</option>
+            <option value="viewer">مُشاهد — عرض فقط بدون أي صلاحية تعديل أو إضافة أو حذف أو طباعة</option>
           </select>
         </div>
         <div class="field"><label>كلمة المرور (8 أحرف على الأقل) *</label><input type="password" name="password" required minlength="8" autocomplete="new-password" /></div>
@@ -759,6 +760,7 @@
           <select name="role" required>
             <option value="staff">محاسب — بدون صلاحية إدارة المستخدمين</option>
             <option value="admin">مسؤول — صلاحية كاملة + إدارة المستخدمين</option>
+            <option value="viewer">مُشاهد — عرض فقط بدون أي صلاحية تعديل أو إضافة أو حذف أو طباعة</option>
           </select>
         </div>
       </form>
@@ -795,6 +797,8 @@
 <!-- منطقة الطباعة (مخفية على الشاشة، تظهر فقط عند الطباعة/حفظ PDF) -->
 <div id="printArea"></div>
 
+<!-- html2pdf.js: يحوّل إيصال الدفع (نفس عنصر الطباعة) إلى ملف PDF داخل المتصفح لإرساله عبر واتساب -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js"></script>
 <!-- إعدادات مشروع Firebase الخاص بالمدرسة (سكربت عادي وليس module حتى يُحمَّل فورًا ويكون window.FIREBASE_CONFIG جاهزًا قبل store.js) -->
 <script src="../js/firebase-config.js"></script>
 <!-- type="module" ضروري هنا لاستيراد Firebase SDK مباشرةً من CDN بدون أي أداة بناء (bundler) -->
